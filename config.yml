@@ -1,22 +1,23 @@
-version: 1
-validation: sovereign
-accounts: 
-- name: alice
-  coins:
-  - 20000token
-  - 200000000stake
-- name: bob
-  coins:
-  - 10000token
-  - 100000000stake
-client:
-  openapi:
-    path: docs/static/openapi.yml
-faucet:
-  name: bob
-  coins:
-  - 5token
-  - 100000stake
-validators:
-- name: alice
-  bonded: 100000000stake
+version: 1 #specifies the version of the configuration format
+validation: sovereign #specifies the type of validation to perform
+accounts: #Defines the accounts available to the network
+- name: alice # Account name "alice" for testing and transaction
+  coins: #Initial coins assigned to Alice's account
+  - 20000token #alice has 20,000 tokens
+  - 200000000stake #Alice has 10,000 foocoins
+- name: bob # Account name "bob" for testing and transaction
+  coins: #initial coins assigned to Bob's account
+  - 10000token #bob has 10,000 tokens
+  - 100000000stake #Bob has 100 million stake coins for network validation
+client: #Client settings for API access
+  openapi: #OpenAPI documentation configuration
+    path: docs/static/openapi.yml #Path to OpenAOI spec file for API documentation
+faucet: #Faucet configuration for token distribution
+  name: bob #specifies bob as the faucent account to dispense tokens
+  coins: #Tokens available from the facent
+  - 5token #Allows dispensing 5 tokens per request
+  - 100000stake #Allows dispensing 100,000 stake coins per request
+validators: #Validator nodes configuration for securing th network
+- name: alice #Defines alice as a validator node
+  bonded: 100000000stake #alices validator is bonded with 100 million stake coins
+  
