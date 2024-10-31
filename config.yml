@@ -20,4 +20,6 @@ faucet: #Faucet configuration for token distribution
 validators: #Validator nodes configuration for securing th network
 - name: alice #Defines alice as a validator node
   bonded: 100000000stake #alices validator is bonded with 100 million stake coins
-  
+dependencies:
+  - bank
+
